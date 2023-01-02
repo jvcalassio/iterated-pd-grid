@@ -29,22 +29,27 @@ This adapted model was built in order to study if **the increase in the number o
 
 You'll need Python 3.8 and pip in order to setup and run the simulation. Follow the steps below:
 
-1. Clone the repository and install the requirements
+1. Clone the repository
 
 ```
 git clone git@github.com:jvcalassio/iterated-pd-grid.git
-pip3 install -r requirements.txt
 ```
 
-2. Run the simulation
+2. Get into the folder and install the requirements
+
+```
+cd iterated-pd-grid && pip3 install -r requirements.txt
+```
+
+3. Run the simulation
 
 ```
 python3 main.py
 ```
 
-3. Access the simulation at `http://127.0.0.1:8521`.
+4. Access the simulation at `http://127.0.0.1:8521`.
 
-4. You can then set the parameters as you want, and click the "Start" button at the top right corner of the page navigation bar.
+5. You can then set the parameters as you want, and click the "Start" button at the top right corner of the page navigation bar.
 
 ### Parameters description
 
