@@ -23,7 +23,7 @@ Where *D* is the defection award.
 
 ### Causal hyphotesis studied
 
-This adapted model was built in order to study if **the increase in the number of cooperating agents reflects in higher scores for cooperating agents**. In other words, once cooperation is stabilished in a group of agents, it will be maintained and keep a higher score than neighboring defecting agents, and potentially overthrowing them.
+This adapted model was built in order to study if **the increase in the number of cooperating agents reflects in higher scores for cooperating agents**. In other words, in the long term cooperation generates more value to system than defection. The more cooperating agents you have, more value will be generated for the system overall.
 
 ### How to run it
 
@@ -58,4 +58,4 @@ python3 main.py
   - Random: A random agent is chosen to take an action (without replacement), and it will be done until all the agents take an action in the current round. As it's done in the "sequential" type, the actions from agents in the current round influence actions from other agents.
   - Simultaneous: All the agents will choose their movement based on the current state of the grid, and then all of them are going to update simultenously. This way, the actions taken by a specific agent will only affect the next round from it's neighbors.
 - **Initial coopearation (%)**: defines the percentage of cooperating agents in the initial grid. Default value is 50%.
-- **Defection award**: defines the award for the agent that chooses to defect interacting with an agent that chose to cooperate. Default value is 1.6, and the range goes from 0 to 3.
+- **Defection award**: defines the award for the agent that chooses to defect interacting with an agent that chose to cooperate. Default value is 1.6, and the range goes from 0 to 10.

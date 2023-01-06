@@ -11,6 +11,18 @@ canvas_element = CanvasGrid(portrayPDAgent, 50, 50, 500, 500)
 chart_element = ChartModule(
     [{"Label": "Cooperating_Agents", "Color": "blue"}, {"Label": "Defecting_Agents", "Color": "red"}]
 )
+# chart_element = ChartModule(
+#     [{"Label": "Total_value", "Color": "green"}]
+# )
+
+class TotalOutputElement(TextElement):
+    def __init__(self):
+        super().__init__()
+
+    def render(self, model):
+        return "Total value: " + str(sum([agent.score for agent in model.schedule.agents]))
+
+total_coop = TotalOutputElement()
 
 model_params = {
     "height": 50,
@@ -34,9 +46,9 @@ model_params = {
         "Defection award",
         value=1.6,
         min_value=0,
-        max_value=3,
+        max_value=10,
         step=0.1
     )
 }
 
-server = ModularServer(PdGrid, [canvas_element, chart_element], "Prisoner's Dilemma", model_params)
+server = ModularServer(PdGrid, [canvas_element, total_coop, chart_element], "Prisoner's Dilemma", model_params)

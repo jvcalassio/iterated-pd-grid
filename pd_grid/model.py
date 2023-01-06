@@ -56,6 +56,8 @@ class PdGrid(Model):
                 self.grid.place_agent(agent, (x, y))
                 self.schedule.add(agent)
 
+        self.world_value = 0
+
         self.datacollector = DataCollector(
             {
                 "Cooperating_Agents": lambda m: len(
@@ -63,6 +65,9 @@ class PdGrid(Model):
                 ),
                 "Defecting_Agents": lambda m: len(
                     [a for a in m.schedule.agents if a.move == "D"]
+                ),
+                "Total_value": lambda m: sum(
+                    [agent.score for agent in m.schedule.agents]
                 )
             }
         )
