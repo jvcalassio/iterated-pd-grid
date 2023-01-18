@@ -36,7 +36,15 @@ class PdGrid(Model):
             payoffs: (optional) Dictionary of (move, neighbor_move) payoffs.
         """
         self.grid = SingleGrid(width, height, torus=True)
-        self.schedule_type = schedule_type
+
+        # Handles problem caused by batch_runner _make_model_kwargs function
+        # It transforms every iterable to params, so it doesn't support strings as a single param
+        # I'll check if an integer is received and map it to each scheduler type
+        if type(schedule_type) == int:
+            self.schedule_type = list(self.schedule_types.keys())[schedule_type]
+        else:
+            self.schedule_type = schedule_type
+
         self.schedule = self.schedule_types[self.schedule_type](self)
         self.payoff = {
             ("C", "C"): 1, 
