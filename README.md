@@ -27,7 +27,9 @@ This adapted model was built in order to study if **the increase in the number o
 
 ### How to run it
 
-You'll need Python 3.8 and pip in order to setup and run the simulation. Follow the steps below:
+You'll need Python 3.8 and pip in order to setup and run the simulation. 
+
+There are two modes of operation: web UI and batch runner. For both of them, you'll need to setup the environment:
 
 1. Clone the repository
 
@@ -41,15 +43,34 @@ git clone git@github.com:jvcalassio/iterated-pd-grid.git
 cd iterated-pd-grid && pip3 install -r requirements.txt
 ```
 
-3. Run the simulation
+#### Web UI
+
+To execute the web UI, follow the steps below:
+
+
+3. Run the simulation;
 
 ```
 python3 main.py
 ```
 
-4. Access the simulation at `http://127.0.0.1:8521`.
+4. Access the simulation at `http://127.0.0.1:8521`;
 
 5. You can then set the parameters as you want, and click the "Start" button at the top right corner of the page navigation bar.
+
+#### Batch runner
+
+To execute the batch runner, follow the steps below:
+
+3. Set the parameters of your simulation inside the `params` object in the `batch_runner.py` file;
+
+4. Run the batch runner;
+
+```
+python3 batch_runner.py
+```
+
+5. The results of the simulation will be outputed to a CSV file at the `results` folder.
 
 ### Parameters description
 

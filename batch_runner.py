@@ -12,18 +12,18 @@ if __name__ == "__main__":
     "height": 50,
     "schedule_type": 2, # Simultaneous
     "initial_cooperation": 0.5,
-    "defection_award": list(np.arange(0,5.0,0.1))
+    "defection_award": list(np.arange(0.8,2.5,0.1))
   }
 
-  iterations = 15
-  max_steps = 200
+  iterations = 50
+  max_steps = 150
 
   batch_results = batch_run(
     PdGrid,
     parameters=params,
     iterations=iterations,
     max_steps=max_steps,
-    number_processes=6,
+    number_processes=12,
     # data_collection_period=1,
     display_progress=True
   )
